@@ -1,3 +1,4 @@
+import heapq
 def heuristic(n,goal):
     return abs(n-goal)
 
@@ -27,3 +28,12 @@ def astar(graph,start,goal):
                 heapq.heappush(open_list,(f,neighbor))
                 parent[neighbor]=current
     return None
+
+graph = {
+    0:[(1,1), (2,4)],
+    1:[(2,2), (3,5)],
+    2:[(3,1)],
+    3:[]
+}
+
+print("Path : ", astar(graph,0,3))
